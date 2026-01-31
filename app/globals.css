@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  /* Custom colors from design */
+  --bg-primary: #0A0F14;
+  --bg-secondary: #0F1419;
+  --bg-tertiary: #1E293B;
+  --accent-gold: #FFD700;
+  --text-primary: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --success: #22C55E;
+  --border-color: #1E293B;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Offset for fixed header */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced smooth scrolling for webkit browsers */
+* {
+  -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+}
+
+/* Optimize scrolling performance */
+main {
+  will-change: scroll-position;
+  transform: translateZ(0); /* GPU acceleration */
+}
+
+/* Smooth transitions for all interactive elements */
+a, button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* HeroUI Input overrides - disable default focus ring */
+[data-slot="input-wrapper"] {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-slot="input-wrapper"]:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure consistent input height */
+[data-slot="inner-wrapper"] {
+  height: 100%;
+}
