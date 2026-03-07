@@ -20,6 +20,10 @@ import { ContactForm } from "@/components/ContactForm";
 import { BackToTop } from "@/components/BackToTop";
 import { Portfolio } from "@/components/Portfolio";
 import { SkillsChip } from "@/components/SkillsChip";
+import { Reveal } from "@/components/Reveal";
+import { StatCard } from "@/components/StatCard";
+import Image from "next/image";
+import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,39 +44,7 @@ export default function Home() {
         </span>
 
         {/* Desktop Nav - hidden on mobile, shown on tablet+ */}
-        <nav className="hidden md:flex items-center gap-7 lg:gap-10">
-          <a
-            href="#about"
-            className="text-white font-inter text-[13px] lg:text-sm font-medium hover:text-[var(--accent-gold)] transition-colors"
-          >
-            About
-          </a>
-          <a
-            href="#skills"
-            className="text-[var(--text-secondary)] font-inter text-[13px] lg:text-sm font-medium hover:text-[var(--accent-gold)] transition-colors"
-          >
-            Skills
-          </a>
-          <a
-            href="#portfolio"
-            className="text-[var(--text-secondary)] font-inter text-[13px] lg:text-sm font-medium hover:text-[var(--accent-gold)] transition-colors"
-          >
-            Projects
-          </a>
-          <a
-            href="#experience"
-            className="text-[var(--text-secondary)] font-inter text-[13px] lg:text-sm font-medium hover:text-[var(--accent-gold)] transition-colors"
-          >
-            Experience
-          </a>
-          <a
-            href="#contact"
-            className="text-[var(--text-secondary)] font-inter text-[13px] lg:text-sm font-medium hover:text-[var(--accent-gold)] transition-colors"
-          >
-            Contact
-          </a>
-        </nav>
-
+        <Navbar />
         {/* Hire Me CTA - hidden on mobile */}
         <Button
           className="hidden md:flex bg-[var(--accent-gold)] text-[var(--bg-primary)] font-inter text-[13px] lg:text-sm font-semibold px-5 lg:px-6 py-[10px] lg:py-3 rounded-md"
@@ -112,9 +84,13 @@ export default function Home() {
 
         {/* Profile Image */}
         <div className="w-[120px] h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] rounded-full border-[3px] border-[var(--accent-gold)] bg-[var(--bg-tertiary)] flex items-center justify-center overflow-hidden">
-          <span className="text-[var(--accent-gold)] font-jetbrains text-4xl md:text-5xl lg:text-6xl font-bold">
-            TB
-          </span>
+          <Image
+            src="/assets/avatar.jpg"
+            alt="Tony Blanco"
+            width={160}
+            height={160}
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Name */}
@@ -193,20 +169,22 @@ export default function Home() {
         className="flex flex-col items-center bg-[var(--bg-secondary)] gap-8 lg:gap-12 px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]"
       >
         {/* Header - gap:12px */}
-        <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
-          <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
-            ABOUT ME
-          </span>
-          <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
-            Turning Ideas Into Reality
-          </h2>
-        </div>
+        <Reveal>
+          <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
+            <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
+              ABOUT ME
+            </span>
+            <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
+              Turning Ideas Into Reality
+            </h2>
+          </div>
+        </Reveal>
 
         {/* Desktop: Two-column layout (description left, stats right) */}
         {/* Mobile/Tablet: Single column */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 w-full lg:max-w-[1200px]">
           {/* Left Column - Description (desktop only shows two paragraphs) */}
-          <div className="flex flex-col gap-6 w-full lg:flex-1">
+          <Reveal delay={0.1} className="flex flex-col gap-6 w-full lg:flex-1">
             <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-base font-normal leading-[1.7] text-center lg:text-left w-full">
               Experienced professional who has worked as a full-stack engineer
               on numerous projects, utilizing both front-end and back-end
@@ -218,69 +196,24 @@ export default function Home() {
               updated on the latest web best practices. I proactively generate
               proposals for the most effective approaches.
             </p>
-          </div>
+          </Reveal>
 
           {/* Right Column - Stats Grid */}
-          <div className="flex flex-col md:flex-row lg:flex-col gap-4 lg:gap-6 w-full md:max-w-[800px] lg:max-w-none lg:flex-1">
+          <Reveal
+            delay={0.2}
+            className="flex flex-col md:flex-row lg:flex-col gap-4 lg:gap-6 w-full md:max-w-[800px] lg:max-w-none lg:flex-1"
+          >
             {/* Row 1 */}
             <div className="flex gap-4 lg:gap-6 w-full md:flex-1 lg:flex-none">
-              <Card
-                className="flex-1 bg-[var(--bg-tertiary)] border-none rounded-xl"
-                shadow="none"
-              >
-                <CardBody className="flex flex-col items-center lg:items-start gap-1 lg:gap-2 p-4 lg:p-6">
-                  <span className="text-[var(--accent-gold)] font-jetbrains text-[28px] lg:text-4xl font-bold">
-                    10+
-                  </span>
-                  <span className="text-[var(--text-secondary)] font-inter text-[11px] lg:text-sm font-normal lg:font-medium text-center lg:text-left">
-                    Years Experience
-                  </span>
-                </CardBody>
-              </Card>
-              <Card
-                className="flex-1 bg-[var(--bg-tertiary)] border-none rounded-xl"
-                shadow="none"
-              >
-                <CardBody className="flex flex-col items-center lg:items-start gap-1 lg:gap-2 p-4 lg:p-6">
-                  <span className="text-[var(--accent-gold)] font-jetbrains text-[28px] lg:text-4xl font-bold">
-                    50+
-                  </span>
-                  <span className="text-[var(--text-secondary)] font-inter text-[11px] lg:text-sm font-normal lg:font-medium text-center lg:text-left">
-                    Projects Delivered
-                  </span>
-                </CardBody>
-              </Card>
+              <StatCard value="10+" label="Years Experience" />
+              <StatCard value="50+" label="Projects Delivered" />
             </div>
             {/* Row 2 */}
             <div className="flex gap-4 lg:gap-6 w-full md:flex-1 lg:flex-none">
-              <Card
-                className="flex-1 bg-[var(--bg-tertiary)] border-none rounded-xl"
-                shadow="none"
-              >
-                <CardBody className="flex flex-col items-center lg:items-start gap-1 lg:gap-2 p-4 lg:p-6">
-                  <span className="text-[var(--accent-gold)] font-jetbrains text-[28px] lg:text-4xl font-bold">
-                    8+
-                  </span>
-                  <span className="text-[var(--text-secondary)] font-inter text-[11px] lg:text-sm font-normal lg:font-medium text-center lg:text-left">
-                    Countries Served
-                  </span>
-                </CardBody>
-              </Card>
-              <Card
-                className="flex-1 bg-[var(--bg-tertiary)] border-none rounded-xl"
-                shadow="none"
-              >
-                <CardBody className="flex flex-col items-center lg:items-start gap-1 lg:gap-2 p-4 lg:p-6">
-                  <span className="text-[var(--accent-gold)] font-jetbrains text-[28px] lg:text-4xl font-bold">
-                    100%
-                  </span>
-                  <span className="text-[var(--text-secondary)] font-inter text-[11px] lg:text-sm font-normal lg:font-medium text-center lg:text-left">
-                    Client Satisfaction
-                  </span>
-                </CardBody>
-              </Card>
+              <StatCard value="8+" label="Countries Served" />
+              <StatCard value="100%" label="Client Satisfaction" />
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -290,20 +223,26 @@ export default function Home() {
         className="flex flex-col items-center bg-[var(--bg-primary)] gap-8 lg:gap-12 px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]"
       >
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
-          <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
-            TECHNICAL EXPERTISE
-          </span>
-          <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
-            Technologies I Work With
-          </h2>
-          <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-normal text-center">
-            A comprehensive toolkit built over a decade of hands-on development
-          </p>
-        </div>
+        <Reveal>
+          <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
+            <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
+              TECHNICAL EXPERTISE
+            </span>
+            <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
+              Technologies I Work With
+            </h2>
+            <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-normal text-center">
+              A comprehensive toolkit built over a decade of hands-on
+              development
+            </p>
+          </div>
+        </Reveal>
 
         {/* Skills Grid - responsive: 1 col mobile, 2 col tablet, 3 col desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 w-full lg:max-w-[1200px]">
+        <Reveal
+          delay={0.15}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 w-full lg:max-w-[1200px]"
+        >
           {/* Frontend */}
           <Card
             className="bg-[var(--bg-tertiary)] border-none rounded-xl"
@@ -515,7 +454,7 @@ export default function Home() {
               </div>
             </CardBody>
           </Card>
-        </div>
+        </Reveal>
       </section>
 
       {/* Portfolio Section */}
@@ -527,21 +466,26 @@ export default function Home() {
         className="flex flex-col items-center bg-[var(--bg-primary)] gap-8 lg:gap-12 px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]"
       >
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
-          <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
-            WORK EXPERIENCE
-          </span>
-          <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
-            Companies I&apos;ve Worked With
-          </h2>
-          <p className="hidden lg:block text-[var(--text-secondary)] font-inter text-lg font-normal text-center">
-            A track record of delivering high-impact solutions for global
-            companies
-          </p>
-        </div>
+        <Reveal>
+          <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
+            <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
+              WORK EXPERIENCE
+            </span>
+            <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
+              Companies I&apos;ve Worked With
+            </h2>
+            <p className="hidden lg:block text-[var(--text-secondary)] font-inter text-lg font-normal text-center">
+              A track record of delivering high-impact solutions for global
+              companies
+            </p>
+          </div>
+        </Reveal>
 
         {/* Experience List */}
-        <div className="flex flex-col gap-4 lg:gap-6 w-full lg:max-w-[1200px]">
+        <Reveal
+          delay={0.15}
+          className="flex flex-col gap-4 lg:gap-6 w-full lg:max-w-[1200px]"
+        >
           {/* Exp 1 */}
           <Card
             className="bg-[var(--bg-tertiary)] border-none rounded-xl lg:rounded-2xl"
@@ -726,23 +670,28 @@ export default function Home() {
               </div>
             </CardBody>
           </Card>
-        </div>
+        </Reveal>
       </section>
 
       {/* Education Section - responsive */}
       <section className="flex flex-col items-center bg-[var(--bg-secondary)] gap-8 lg:gap-12 px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]">
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
-          <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
-            EDUCATION
-          </span>
-          <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
-            Academic Background
-          </h2>
-        </div>
+        <Reveal>
+          <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
+            <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
+              EDUCATION
+            </span>
+            <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
+              Academic Background
+            </h2>
+          </div>
+        </Reveal>
 
         {/* Education Cards - 1 col mobile, 2 col desktop */}
-        <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 w-full lg:max-w-[1200px]">
+        <Reveal
+          delay={0.15}
+          className="flex flex-col lg:flex-row gap-4 lg:gap-8 w-full lg:max-w-[1200px]"
+        >
           {/* Education Card 1 */}
           <Card
             className="bg-[var(--bg-tertiary)] border-none rounded-xl lg:rounded-2xl flex-1"
@@ -798,27 +747,32 @@ export default function Home() {
               </div>
             </CardBody>
           </Card>
-        </div>
+        </Reveal>
       </section>
 
       {/* Timezone Section - responsive */}
       <section className="flex flex-col items-center bg-[var(--bg-primary)] gap-8 lg:gap-12 px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]">
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
-          <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
-            STRATEGIC ADVANTAGE
-          </span>
-          <h2 className="text-white font-inter text-xl md:text-[28px] lg:text-[42px] font-bold text-center w-full">
-            Real-Time Collaboration for US Clients
-          </h2>
-          <p className="text-[var(--text-secondary)] font-inter text-[13px] lg:text-lg font-normal text-center w-full">
-            Based in Argentina with significant overlapping hours with US time
-            zones
-          </p>
-        </div>
+        <Reveal>
+          <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
+            <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
+              STRATEGIC ADVANTAGE
+            </span>
+            <h2 className="text-white font-inter text-xl md:text-[28px] lg:text-[42px] font-bold text-center w-full">
+              Real-Time Collaboration for US Clients
+            </h2>
+            <p className="text-[var(--text-secondary)] font-inter text-[13px] lg:text-lg font-normal text-center w-full">
+              Based in Argentina with significant overlapping hours with US time
+              zones
+            </p>
+          </div>
+        </Reveal>
 
         {/* Timezone Cards - responsive: 1 column on mobile, 3 columns on tablet+ */}
-        <div className="flex flex-col md:flex-row gap-4 lg:gap-8 w-full lg:max-w-[1200px]">
+        <Reveal
+          delay={0.15}
+          className="flex flex-col md:flex-row gap-4 lg:gap-8 w-full lg:max-w-[1200px]"
+        >
           {/* Card 1 */}
           <Card
             className="bg-[var(--bg-tertiary)] border-none md:flex-1 rounded-xl lg:rounded-2xl"
@@ -875,7 +829,7 @@ export default function Home() {
               </p>
             </CardBody>
           </Card>
-        </div>
+        </Reveal>
       </section>
 
       {/* Contact Section - responsive */}
@@ -884,67 +838,71 @@ export default function Home() {
         className="flex flex-col items-center bg-[var(--bg-secondary)] gap-8 lg:gap-12 px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]"
       >
         {/* "Let's Build Something Great" Card */}
-        <Card
-          className="bg-[var(--bg-tertiary)] border-none w-full md:max-w-[600px] lg:max-w-[800px] rounded-2xl lg:rounded-3xl"
-          shadow="none"
-        >
-          <CardBody className="flex flex-col items-center gap-6 lg:gap-8 px-6 lg:px-20 py-10 lg:py-16">
-            <span className="text-[var(--accent-gold)] font-jetbrains text-[9px] lg:text-xs font-semibold tracking-[2px] text-center">
-              LET&apos;S BUILD SOMETHING GREAT
-            </span>
-            <h2 className="text-white font-inter text-[22px] md:text-[28px] lg:text-4xl font-bold text-center w-full">
-              Ready to Start Your Next Project?
-            </h2>
-            <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-normal leading-[1.6] text-center w-full md:max-w-[500px] lg:max-w-[600px]">
-              I&apos;m currently available for freelance work and new
-              opportunities. Let&apos;s discuss how I can help bring your ideas
-              to life with clean, scalable code.
-            </p>
+        <Reveal>
+          <Card
+            className="bg-[var(--bg-tertiary)] border-none w-full md:max-w-[600px] lg:max-w-[800px] rounded-2xl lg:rounded-3xl"
+            shadow="none"
+          >
+            <CardBody className="flex flex-col items-center gap-6 lg:gap-8 px-6 lg:px-20 py-10 lg:py-16">
+              <span className="text-[var(--accent-gold)] font-jetbrains text-[9px] lg:text-xs font-semibold tracking-[2px] text-center">
+                LET&apos;S BUILD SOMETHING GREAT
+              </span>
+              <h2 className="text-white font-inter text-[22px] md:text-[28px] lg:text-4xl font-bold text-center w-full">
+                Ready to Start Your Next Project?
+              </h2>
+              <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-normal leading-[1.6] text-center w-full md:max-w-[500px] lg:max-w-[600px]">
+                I&apos;m currently available for freelance work and new
+                opportunities. Let&apos;s discuss how I can help bring your
+                ideas to life with clean, scalable code.
+              </p>
 
-            {/* Contact Buttons - responsive: vertical on mobile, horizontal on tablet+ */}
-            <div className="flex flex-col md:flex-row gap-3 lg:gap-4 w-full md:justify-center">
-              <Button
-                className="w-full md:w-auto h-auto py-4 lg:py-[18px] px-6 lg:px-10 bg-[var(--accent-gold)] text-[var(--bg-primary)] font-inter text-sm lg:text-base font-semibold rounded-lg flex flex-row items-center justify-center gap-[10px]"
-                radius="sm"
-                onPress={() => scrollToSection("contact-form")}
-              >
-                <Mail className="w-[18px] h-[18px] lg:w-5 lg:h-5 text-[var(--bg-primary)]" />
-                Get In Touch
-              </Button>
-              <Button
-                variant="bordered"
-                className="w-full md:w-auto h-auto py-4 lg:py-[18px] px-6 lg:px-10 border-2 border-[var(--accent-gold)] text-[var(--accent-gold)] font-inter text-sm lg:text-base font-semibold rounded-lg bg-transparent flex flex-row items-center justify-center gap-[10px]"
-                radius="sm"
-                onPress={() =>
-                  window.open(
-                    "https://calendly.com/tblancog/1-hour-meeting",
-                    "_blank",
-                  )
-                }
-              >
-                <Calendar className="w-[18px] h-[18px] lg:w-5 lg:h-5 text-[var(--accent-gold)]" />
-                Schedule a Call
-              </Button>
-            </div>
-          </CardBody>
-        </Card>
+              {/* Contact Buttons - responsive: vertical on mobile, horizontal on tablet+ */}
+              <div className="flex flex-col md:flex-row gap-3 lg:gap-4 w-full md:justify-center">
+                <Button
+                  className="w-full md:w-auto h-auto py-4 lg:py-[18px] px-6 lg:px-10 bg-[var(--accent-gold)] text-[var(--bg-primary)] font-inter text-sm lg:text-base font-semibold rounded-lg flex flex-row items-center justify-center gap-[10px]"
+                  radius="sm"
+                  onPress={() => scrollToSection("contact-form")}
+                >
+                  <Mail className="w-[18px] h-[18px] lg:w-5 lg:h-5 text-[var(--bg-primary)]" />
+                  Get In Touch
+                </Button>
+                <Button
+                  variant="bordered"
+                  className="w-full md:w-auto h-auto py-4 lg:py-[18px] px-6 lg:px-10 border-2 border-[var(--accent-gold)] text-[var(--accent-gold)] font-inter text-sm lg:text-base font-semibold rounded-lg bg-transparent flex flex-row items-center justify-center gap-[10px]"
+                  radius="sm"
+                  onPress={() =>
+                    window.open(
+                      "https://calendly.com/tblancog/1-hour-meeting",
+                      "_blank"
+                    )
+                  }
+                >
+                  <Calendar className="w-[18px] h-[18px] lg:w-5 lg:h-5 text-[var(--accent-gold)]" />
+                  Schedule a Call
+                </Button>
+              </div>
+            </CardBody>
+          </Card>
+        </Reveal>
 
         {/* Contact Form - Always visible below the card */}
-        <div
-          id="contact-form"
-          className="w-full md:max-w-[600px] lg:max-w-[700px]"
-        >
-          <div className="flex flex-col items-center gap-4 mb-8 mt-8">
-            <h3 className="text-white font-inter text-xl md:text-2xl lg:text-3xl font-bold text-center">
-              Send Me a Message
-            </h3>
-            <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-base font-normal text-center">
-              Fill out the form below and I&apos;ll get back to you within 24
-              hours.
-            </p>
+        <Reveal delay={0.15}>
+          <div
+            id="contact-form"
+            className="w-full md:max-w-[600px] lg:max-w-[700px]"
+          >
+            <div className="flex flex-col items-center gap-4 mb-8 mt-8">
+              <h3 className="text-white font-inter text-xl md:text-2xl lg:text-3xl font-bold text-center">
+                Send Me a Message
+              </h3>
+              <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-base font-normal text-center">
+                Fill out the form below and I&apos;ll get back to you within 24
+                hours.
+              </p>
+            </div>
+            <ContactForm />
           </div>
-          <ContactForm />
-        </div>
+        </Reveal>
       </section>
 
       {/* Footer - responsive */}
@@ -954,7 +912,12 @@ export default function Home() {
           {/* Logo */}
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
             <span className="text-[var(--accent-gold)] font-jetbrains text-xl lg:text-2xl font-bold">
-              TB
+              <Image
+                src="/assets/avatar.jpg"
+                alt="Tony Blanco"
+                width={32}
+                height={32}
+              />
             </span>
             <span className="text-[var(--text-muted)] font-inter text-xs lg:text-sm font-normal">
               Full Stack Engineer

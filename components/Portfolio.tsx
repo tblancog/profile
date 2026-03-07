@@ -3,17 +3,15 @@
 import {
   Card,
   CardBody,
-  Chip,
   Modal,
   ModalContent,
   ModalHeader,
   ModalBody,
-  ModalFooter,
-  Button,
 } from "@heroui/react";
 import { TrendingUp, MapPin, Image as ImageIcon, X } from "lucide-react";
 import { useState } from "react";
 import { SkillsChip } from "./SkillsChip";
+import { Reveal } from "./Reveal";
 
 interface Project {
   id: string;
@@ -23,6 +21,7 @@ interface Project {
   techStack: string;
   description: string;
   tags: Array<string>;
+  impact: string;
 }
 
 export const Portfolio = () => {
@@ -39,6 +38,7 @@ export const Portfolio = () => {
       description:
         "A comprehensive enterprise analytics platform that leverages AWS Bedrock for advanced AI-powered insights. Built with a modern React architecture, the platform handles massive datasets and provides real-time analytics for enterprise clients. Features include predictive analytics, custom dashboards, and automated reporting systems that scale to millions of data points.",
       tags: ["React", "AWS Bedrock", "PostgreSQL"],
+      impact: "Processes 1M+ daily data points",
     },
     {
       id: "mapping",
@@ -49,6 +49,7 @@ export const Portfolio = () => {
       description:
         "Interactive farming platform with deep Mapbox GL integration for real-time field data visualization and precision agriculture. The platform enables farmers to monitor crop health, optimize irrigation schedules, and manage resources efficiently through advanced geospatial analytics. Features include satellite imagery integration, weather data overlays, and predictive crop yield modeling.",
       tags: ["Mapbox GL", "React.js", "Node.js"],
+      impact: "Serves 500+ active farmers",
     },
     {
       id: "gamification",
@@ -59,6 +60,7 @@ export const Portfolio = () => {
       description:
         "Educational technology platform that uses gamification principles to create engaging learning experiences for youth entrepreneurship. Built for Build.org, the platform features interactive challenges, achievement systems, and social learning components. Students progress through entrepreneurship fundamentals while earning badges, competing on leaderboards, and collaborating with peers.",
       tags: ["React", "TypeScript", "Firebase"],
+      impact: "Engaged 10K+ students",
     },
   ];
 
@@ -79,67 +81,78 @@ export const Portfolio = () => {
         className="flex flex-col items-center bg-[var(--bg-secondary)] gap-8 lg:gap-12 px-5 md:px-10 lg:px-[120px] py-[60px] md:py-20 lg:py-[100px]"
       >
         {/* Header */}
-        <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
-          <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
-            PROJECT PORTFOLIO
-          </span>
-          <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
-            Featured Work Samples
-          </h2>
-          <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-normal text-center max-w-[700px]">
-            A selection of projects demonstrating my expertise across various
-            technologies
-          </p>
-        </div>
+        <Reveal>
+          <div className="flex flex-col items-center gap-3 lg:gap-4 w-full">
+            <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
+              PROJECT PORTFOLIO
+            </span>
+            <h2 className="text-white font-inter text-2xl md:text-[32px] lg:text-[42px] font-bold text-center">
+              Featured Work Samples
+            </h2>
+            <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-normal text-center max-w-[700px]">
+              A selection of projects demonstrating my expertise across various
+              technologies
+            </p>
+          </div>
+        </Reveal>
 
         {/* Projects Grid - Desktop: 3 columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full lg:max-w-[1200px]">
-          {projects.map((project) => (
-            <Card
-              key={project.id}
-              isPressable
-              onPress={() => handleProjectClick(project)}
-              className="bg-[#1a2332] border-none rounded-xl hover:bg-[#1f2937] transition-colors cursor-pointer group"
-              shadow="none"
-            >
-              <CardBody className="flex flex-col gap-4 p-6">
-                {/* Icon */}
-                <div className="flex items-center justify-center w-full h-32 rounded-lg bg-[#0f1621] text-[var(--accent-gold)] group-hover:scale-105 transition-transform">
-                  {project.icon}
-                </div>
+          {projects.map((project, index) => (
+            <Reveal key={project.id} delay={index * 0.1}>
+              <Card
+                isPressable
+                onPress={() => handleProjectClick(project)}
+                className="bg-[#1a2332] border-none rounded-xl hover:bg-[#1f2937] transition-colors cursor-pointer group h-full"
+                shadow="none"
+              >
+                <CardBody className="flex flex-col gap-4 p-6">
+                  {/* Icon */}
+                  <div className="flex items-center justify-center w-full h-32 rounded-lg bg-[#0f1621] text-[var(--accent-gold)] group-hover:scale-105 transition-transform">
+                    {project.icon}
+                  </div>
 
-                {/* Title */}
-                <h3 className="text-white font-inter text-lg font-semibold leading-tight">
-                  {project.title}
-                </h3>
+                  {/* Title */}
+                  <h3 className="text-white font-inter text-lg font-semibold leading-tight">
+                    {project.title}
+                  </h3>
 
-                {/* Tech Stack */}
-                <p className="text-[var(--text-secondary)] font-inter text-sm font-normal">
-                  {project.techStack}
-                </p>
+                  {/* Tech Stack */}
+                  <p className="text-[var(--text-secondary)] font-inter text-sm font-normal">
+                    {project.techStack}
+                  </p>
 
-                {/* Description - truncated */}
-                <p className="text-[var(--text-muted)] font-inter text-xs leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
+                  {/* Impact Badge */}
+                  <div className="flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-[var(--success)]" />
+                    <span className="text-[var(--success)] font-jetbrains text-xs font-medium">
+                      {project.impact}
+                    </span>
+                  </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag, index) => (
-                    <SkillsChip
-                      label={tag}
-                      key={index}
-                      color={`bg-[var(--bg-primary)]`}
-                    />
-                  ))}
-                </div>
+                  {/* Description - truncated */}
+                  <p className="text-[var(--text-muted)] font-inter text-xs leading-relaxed line-clamp-2">
+                    {project.description}
+                  </p>
 
-                {/* View Details Link */}
-                <span className="text-[var(--accent-gold)] font-inter text-sm font-medium text-left group-hover:underline mt-2 pointer-events-none">
-                  View Details →
-                </span>
-              </CardBody>
-            </Card>
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tags.map((tag, i) => (
+                      <SkillsChip
+                        label={tag}
+                        key={i}
+                        color={`bg-[var(--bg-primary)]`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* View Details Link */}
+                  <span className="text-[var(--accent-gold)] font-inter text-sm font-medium text-left group-hover:underline mt-2 pointer-events-none">
+                    View Details →
+                  </span>
+                </CardBody>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -195,6 +208,14 @@ export const Portfolio = () => {
                     <div>
                       <span className="text-[var(--accent-gold)] font-inter text-sm font-medium">
                         {selectedProject.techStack}
+                      </span>
+                    </div>
+
+                    {/* Impact */}
+                    <div className="flex items-center gap-2 bg-[var(--success)]/10 px-3 py-2 rounded-lg w-fit">
+                      <TrendingUp className="w-4 h-4 text-[var(--success)]" />
+                      <span className="text-[var(--success)] font-jetbrains text-sm font-medium">
+                        {selectedProject.impact}
                       </span>
                     </div>
 
