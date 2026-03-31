@@ -39,7 +39,6 @@ body {
 /* Optimize scrolling performance */
 main {
   will-change: scroll-position;
-  transform: translateZ(0); /* GPU acceleration */
 }
 
 /* Smooth transitions for all interactive elements */

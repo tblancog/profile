@@ -36,9 +36,11 @@ export default function Home() {
   };
 
   return (
+    <>
+    <BackToTop />
     <main className="flex flex-col min-h-screen w-full max-w-[1440px] mx-auto">
       {/* Header - responsive: mobile h:64px, tablet h:72px, desktop h:80px */}
-      <header className="flex items-center justify-between h-16 md:h-[72px] lg:h-20 px-5 md:px-10 lg:px-[120px] bg-[var(--bg-primary)]">
+      <header className="sticky top-0 z-50 flex items-center justify-between h-16 md:h-[72px] lg:h-20 px-5 md:px-10 lg:px-[120px] bg-[var(--bg-primary)]/95 backdrop-blur-sm border-b border-white/5">
         <span className="text-[var(--accent-gold)] font-jetbrains text-2xl md:text-[26px] lg:text-[28px] font-bold">
           TB
         </span>
@@ -65,9 +67,6 @@ export default function Home() {
 
       {/* Mobile Menu Overlay */}
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-
-      {/* Back to Top Button */}
-      <BackToTop />
 
       {/* Hero Section - responsive */}
       <section
@@ -113,9 +112,9 @@ export default function Home() {
 
         {/* Description */}
         <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-normal leading-[1.6] text-center w-full md:max-w-[600px] lg:max-w-[700px]">
-          10+ years crafting scalable web applications with React, Node.js, and
-          modern technologies. Based in Argentina, serving clients worldwide
-          with US-friendly hours.
+          15+ years building production-grade web and mobile apps for US and
+          international clients. Senior Full Stack Engineer & Tech Lead based
+          in Buenos Aires, serving global teams remotely.
         </p>
 
         {/* CTA Buttons - responsive: vertical on mobile, horizontal on tablet+ */}
@@ -186,15 +185,18 @@ export default function Home() {
           {/* Left Column - Description (desktop only shows two paragraphs) */}
           <Reveal delay={0.1} className="flex flex-col gap-6 w-full lg:flex-1">
             <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-base font-normal leading-[1.7] text-center lg:text-left w-full">
-              Experienced professional who has worked as a full-stack engineer
-              on numerous projects, utilizing both front-end and back-end
-              frameworks in collaboration with product and engineering teams.
+              Senior Full Stack Engineer &amp; Tech Lead with 15+ years
+              building production-grade web and mobile applications for US and
+              international clients — working remotely from Buenos Aires,
+              Argentina.
             </p>
             <p className="hidden lg:block text-[var(--text-secondary)] font-inter text-base font-normal leading-[1.7] text-left w-full">
-              With over 10 years of solid hands-on experience in web
-              development, I consistently maintain a genuine interest in staying
-              updated on the latest web best practices. I proactively generate
-              proposals for the most effective approaches.
+              My core stack is React, Next.js, TypeScript, and Node.js. I&apos;m
+              equally at home architecting backends, leading frontend teams, or
+              shipping mobile apps with React Native. I&apos;ve deployed across
+              AWS, GCP, and Azure DevOps, actively integrate AI tooling (Claude,
+              OpenAI, AWS Bedrock) into my workflow, and own full delivery
+              cycles from architecture through production.
             </p>
           </Reveal>
 
@@ -205,7 +207,7 @@ export default function Home() {
           >
             {/* Row 1 */}
             <div className="flex gap-4 lg:gap-6 w-full md:flex-1 lg:flex-none">
-              <StatCard value="10+" label="Years Experience" />
+              <StatCard value="15+" label="Years Experience" />
               <StatCard value="50+" label="Projects Delivered" />
             </div>
             {/* Row 2 */}
@@ -351,6 +353,18 @@ export default function Home() {
                   label="Sequelize"
                   color="bg-[var(--bg-primary)] text-white font-jetbrains text-[11px] lg:text-xs font-medium px-[10px] lg:px-3 py-1 h-auto rounded-md"
                 />
+                <SkillsChip
+                  label="Prisma"
+                  color="bg-[var(--bg-primary)] text-white font-jetbrains text-[11px] lg:text-xs font-medium px-[10px] lg:px-3 py-1 h-auto rounded-md"
+                />
+                <SkillsChip
+                  label="Supabase"
+                  color="bg-[var(--bg-primary)] text-white font-jetbrains text-[11px] lg:text-xs font-medium px-[10px] lg:px-3 py-1 h-auto rounded-md"
+                />
+                <SkillsChip
+                  label="MS SQL Server"
+                  color="bg-[var(--bg-primary)] text-white font-jetbrains text-[11px] lg:text-xs font-medium px-[10px] lg:px-3 py-1 h-auto rounded-md"
+                />
               </div>
             </CardBody>
           </Card>
@@ -389,6 +403,10 @@ export default function Home() {
                 />
                 <SkillsChip
                   label="CI/CD"
+                  color="bg-[var(--bg-primary)] text-white font-jetbrains text-[11px] lg:text-xs font-medium px-[10px] lg:px-3 py-1 h-auto rounded-md"
+                />
+                <SkillsChip
+                  label="Azure DevOps"
                   color="bg-[var(--bg-primary)] text-white font-jetbrains text-[11px] lg:text-xs font-medium px-[10px] lg:px-3 py-1 h-auto rounded-md"
                 />
               </div>
@@ -451,6 +469,10 @@ export default function Home() {
                   label="Cursor"
                   color="bg-[var(--bg-primary)] text-white font-jetbrains text-[11px] lg:text-xs font-medium px-[10px] lg:px-3 py-1 h-auto rounded-md"
                 />
+                <SkillsChip
+                  label="AWS Bedrock"
+                  color="bg-[var(--bg-primary)] text-white font-jetbrains text-[11px] lg:text-xs font-medium px-[10px] lg:px-3 py-1 h-auto rounded-md"
+                />
               </div>
             </CardBody>
           </Card>
@@ -486,6 +508,55 @@ export default function Home() {
           delay={0.15}
           className="flex flex-col gap-4 lg:gap-6 w-full lg:max-w-[1200px]"
         >
+          {/* Bixlabs */}
+          <Card
+            className="bg-[var(--bg-tertiary)] border-none rounded-xl lg:rounded-2xl"
+            shadow="none"
+          >
+            <CardBody className="flex flex-col lg:flex-row gap-3 lg:gap-6 p-5 lg:p-8">
+              <div className="flex flex-col gap-2 lg:w-[200px] lg:flex-shrink-0">
+                <div className="hidden lg:flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--bg-primary)]">
+                  <span className="text-[var(--accent-gold)] font-jetbrains text-xl font-bold">
+                    B
+                  </span>
+                </div>
+                <span className="text-[var(--accent-gold)] font-jetbrains text-[11px] lg:text-sm font-medium">
+                  Apr 2025 - Feb 2026
+                </span>
+                <span className="hidden lg:block text-[var(--text-muted)] font-inter text-sm font-normal">
+                  Montevideo, Uruguay
+                </span>
+              </div>
+              <div className="flex flex-col gap-2 lg:gap-3 flex-1">
+                <h3 className="text-white font-inter text-base lg:text-xl font-semibold">
+                  Full Stack Engineer
+                </h3>
+                <p className="text-[var(--text-secondary)] font-inter text-[13px] lg:text-base font-medium">
+                  Bixlabs
+                </p>
+                <p className="text-[var(--text-muted)] font-inter text-xs lg:text-[15px] font-normal leading-[1.5] lg:leading-[1.6]">
+                  Built React Native mobile app for Uoppa (merchant deal
+                  platform in São Paulo) and shipped to App Store &amp; Google
+                  Play. Delivered enterprise frontend for JSSI/ANTE aircraft
+                  maintenance scheduling, integrating React with C#/.NET and
+                  Azure DevOps. Architected internal ProjectHub analytics
+                  dashboard using NestJS/VueJS with automated CI/CD pipelines.
+                </p>
+                <div className="hidden lg:flex gap-2 mt-1">
+                  <span className="text-[var(--accent-gold)] font-jetbrains text-xs font-medium px-[10px] py-1 bg-[var(--bg-primary)] rounded">
+                    React Native
+                  </span>
+                  <span className="text-[var(--accent-gold)] font-jetbrains text-xs font-medium px-[10px] py-1 bg-[var(--bg-primary)] rounded">
+                    React
+                  </span>
+                  <span className="text-[var(--accent-gold)] font-jetbrains text-xs font-medium px-[10px] py-1 bg-[var(--bg-primary)] rounded">
+                    Azure DevOps
+                  </span>
+                </div>
+              </div>
+            </CardBody>
+          </Card>
+
           {/* Exp 1 */}
           <Card
             className="bg-[var(--bg-tertiary)] border-none rounded-xl lg:rounded-2xl"
@@ -500,7 +571,7 @@ export default function Home() {
                   </span>
                 </div>
                 <span className="text-[var(--accent-gold)] font-jetbrains text-[11px] lg:text-sm font-medium">
-                  Aug 2024 - Present
+                  Aug 2024 - Dec 2025
                 </span>
                 <span className="hidden lg:block text-[var(--text-muted)] font-inter text-sm font-normal">
                   Utah, USA
@@ -604,7 +675,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-2 lg:gap-3 flex-1">
                 <h3 className="text-white font-inter text-base lg:text-xl font-semibold">
-                  Senior Software Engineer
+                  Development Team Lead
                 </h3>
                 <p className="text-[var(--text-secondary)] font-inter text-[13px] lg:text-base font-medium">
                   Cognizant SoftVision
@@ -640,6 +711,12 @@ export default function Home() {
                 Also collaborated with
               </span>
               <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-10">
+                <span className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-semibold">
+                  Bixlabs
+                </span>
+                <span className="hidden lg:inline text-[var(--bg-tertiary)] font-inter text-lg">
+                  |
+                </span>
                 <span className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-semibold">
                   SoulRefiner
                 </span>
@@ -961,5 +1038,6 @@ export default function Home() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

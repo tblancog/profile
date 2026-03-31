@@ -30,37 +30,37 @@ export const Portfolio = () => {
 
   const projects: Project[] = [
     {
-      id: "analytics",
+      id: "jssi",
       icon: <TrendingUp className="w-12 h-12" />,
-      title: "Enterprise Analytics Platform",
-      category: "ENTERPRISE / SAAS",
-      techStack: "React.js / AWS Bedrock",
+      title: "JSSI/ANTE Aircraft Asset Planner",
+      category: "AVIATION / MAINTENANCE",
+      techStack: "React / C#.NET / Azure DevOps",
       description:
-        "A comprehensive enterprise analytics platform that leverages AWS Bedrock for advanced AI-powered insights. Built with a modern React architecture, the platform handles massive datasets and provides real-time analytics for enterprise clients. Features include predictive analytics, custom dashboards, and automated reporting systems that scale to millions of data points.",
-      tags: ["React", "AWS Bedrock", "PostgreSQL"],
-      impact: "Processes 1M+ daily data points",
+        "Enterprise maintenance scheduling application for JSSI — a global aviation services company. The platform manages aircraft engine inspection and overhaul workflows, tracking assets through maintenance phases before reassignment. Integrated React frontend with a C#/.NET backend via Azure DevOps CI/CD pipelines, optimizing scheduling workflows to reduce operational costs for aircraft asset management.",
+      tags: ["React", "C#/.NET", "Azure DevOps"],
+      impact: "Reduces maintenance operational costs",
     },
     {
-      id: "mapping",
+      id: "habiterre",
       icon: <MapPin className="w-12 h-12" />,
-      title: "Agricultural Mapping Platform",
+      title: "Habiterre Farmer Platform",
       category: "GEOSPATIAL / AGTECH",
-      techStack: "Next.js / Mapbox GL",
+      techStack: "React / Mapbox GL / TypeScript",
       description:
-        "Interactive farming platform with deep Mapbox GL integration for real-time field data visualization and precision agriculture. The platform enables farmers to monitor crop health, optimize irrigation schedules, and manage resources efficiently through advanced geospatial analytics. Features include satellite imagery integration, weather data overlays, and predictive crop yield modeling.",
-      tags: ["Mapbox GL", "React.js", "Node.js"],
+        "Interactive precision agriculture platform built from scratch with deep Mapbox GL integration for real-time field data visualization. The platform enables farmers to monitor crop health, manage irrigation schedules, and track resources through advanced geospatial analytics. Features include satellite imagery overlays, field boundary management, and data-driven recommendations for yield optimization.",
+      tags: ["Mapbox GL", "React", "TypeScript"],
       impact: "Serves 500+ active farmers",
     },
     {
-      id: "gamification",
+      id: "uoppa",
       icon: <ImageIcon className="w-12 h-12" />,
-      title: "Gamification Learning Platform",
-      category: "EDTECH / GAMIFICATION",
-      techStack: "React.js / Node.js",
+      title: "Uoppa — Merchant Deal App",
+      category: "MOBILE / MARKETPLACE",
+      techStack: "React Native / Expo",
       description:
-        "Educational technology platform that uses gamification principles to create engaging learning experiences for youth entrepreneurship. Built for Build.org, the platform features interactive challenges, achievement systems, and social learning components. Students progress through entrepreneurship fundamentals while earning badges, competing on leaderboards, and collaborating with peers.",
-      tags: ["React", "TypeScript", "Firebase"],
-      impact: "Engaged 10K+ students",
+        "React Native mobile app for Uoppa, a merchant deal discovery platform targeting the São Paulo market. Built and delivered the full mobile experience using React Native and Expo, integrating with backend APIs for deal browsing, merchant profiles, and user engagement features. The app successfully reached publishing on both App Store and Google Play, completing the full mobile delivery lifecycle.",
+      tags: ["React Native", "Expo", "TypeScript"],
+      impact: "Published on App Store & Google Play",
     },
   ];
 
