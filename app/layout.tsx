@@ -16,18 +16,23 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://tonyblanco.dev'), // Update with your actual domain
   title: {
-    default: "Tony Blanco - Full Stack Engineer | React, Node.js & AI Development",
-    template: "%s | Tony Blanco - Full Stack Engineer",
+    default: "Tony Blanco - Senior Full Stack Engineer & Tech Lead | React, Node.js & AI",
+    template: "%s | Tony Blanco - Senior Full Stack Engineer",
   },
   description:
-    "Experienced Full Stack Engineer with 10+ years building scalable web applications. Specialized in React, Node.js, TypeScript, AWS, and AI integration. Based in Buenos Aires, Argentina with US-friendly hours.",
+    "Senior Full Stack Engineer & Tech Lead with 15+ years building production-grade web and mobile apps for US and international clients. React, Next.js, TypeScript, Node.js, AWS, and AI integration. Based in Buenos Aires, Argentina.",
   keywords: [
     "Full Stack Engineer",
+    "Senior Full Stack Engineer",
+    "Tech Lead",
     "React Developer",
     "Node.js Developer",
     "TypeScript",
     "Next.js",
+    "React Native",
     "AWS",
+    "GCP",
+    "Azure DevOps",
     "AI Development",
     "AWS Bedrock",
     "Remote Developer",
@@ -38,7 +43,6 @@ export const metadata: Metadata = {
     "Mapbox GL",
     "PostgreSQL",
     "GraphQL",
-    "React Native",
     "Freelance Developer",
   ],
   authors: [{ name: "Tony Blanco", url: "https://tonyblanco.dev" }],
@@ -53,10 +57,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://tonyblanco.dev",
-    siteName: "Tony Blanco - Full Stack Engineer",
-    title: "Tony Blanco - Full Stack Engineer | React, Node.js & AI Development",
+    siteName: "Tony Blanco - Senior Full Stack Engineer & Tech Lead",
+    title: "Tony Blanco - Senior Full Stack Engineer & Tech Lead | React, Node.js & AI",
     description:
-      "Experienced Full Stack Engineer with 10+ years building scalable web applications. Specialized in React, Node.js, TypeScript, AWS, and AI integration.",
+      "Senior Full Stack Engineer & Tech Lead with 15+ years building production-grade web and mobile apps. React, Next.js, TypeScript, Node.js, AWS, and AI integration.",
     images: [
       {
         url: "/og-image.jpg", // You'll need to create this image
@@ -68,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tony Blanco - Full Stack Engineer | React, Node.js & AI Development",
+    title: "Tony Blanco - Senior Full Stack Engineer & Tech Lead | React, Node.js & AI",
     description:
-      "Experienced Full Stack Engineer with 10+ years building scalable web applications. Specialized in React, Node.js, TypeScript, AWS, and AI integration.",
+      "Senior Full Stack Engineer & Tech Lead with 15+ years building production-grade web and mobile apps. React, Next.js, TypeScript, Node.js, AWS, and AI integration.",
     images: ["/og-image.jpg"], // Same image as OpenGraph
     creator: "@tblancog", // Update with your actual Twitter handle if different
   },
@@ -107,8 +111,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Tony Blanco",
-    jobTitle: "Full Stack Engineer",
-    description: "Experienced Full Stack Engineer with 10+ years building scalable web applications",
+    jobTitle: "Senior Full Stack Engineer & Tech Lead",
+    description: "Senior Full Stack Engineer & Tech Lead with 15+ years building production-grade web and mobile applications",
     url: "https://tonyblanco.dev",
     sameAs: [
       "https://linkedin.com/in/tblancog",
@@ -121,13 +125,17 @@ export default function RootLayout({
     },
     knowsAbout: [
       "React",
+      "React Native",
       "Node.js",
       "TypeScript",
       "Next.js",
       "AWS",
+      "GCP",
+      "Azure DevOps",
       "PostgreSQL",
       "GraphQL",
       "Full Stack Development",
+      "Tech Lead",
       "AI Development",
       "AWS Bedrock",
     ],
