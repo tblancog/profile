@@ -35,7 +35,7 @@ No phone numbers were found in the source, metadata, or JSON-LD.
    - `X-DNS-Prefetch-Control: off`
    - `X-Permitted-Cross-Domain-Policies: none`
 
-   `poweredByHeader` is false. Browser source maps are explicitly off (`productionBrowserSourceMaps: false`).
+   `poweredByHeader` is false. Browser source maps are off (`productionBrowserSourceMaps: false`). Server and Turbopack source maps are off as well (`enablePrerenderSourceMaps`, `experimental.serverSourceMaps`, `experimental.turbopackSourceMaps`), so the production build does not emit `.map` files.
 
    The page Content-Security-Policy is set in `proxy.ts`, not duplicated in `next.config.ts`, because a nonce has to be unique per request and browsers enforce every CSP header. Scripts use `'nonce-...'` and `'strict-dynamic'`. Styles use `'unsafe-inline'` on purpose: HeroUI and framer-motion set style attributes, and a style nonce would make browsers ignore `'unsafe-inline'` and break that styling. `'unsafe-eval'` and websocket `connect-src` are added only in development. `upgrade-insecure-requests` is production-only so local HTTP still works. Nonces require dynamic rendering, so the root layout waits for the request with `connection()`. API responses use a separate `default-src 'none'` policy.
 
@@ -52,6 +52,8 @@ No phone numbers were found in the source, metadata, or JSON-LD.
 13. **The honeypot was the only bot control.** The hidden `website` field is still there, with a label inside the hidden container so simple bots are more likely to fill it. A filled honeypot gets the same success response as a real send and does not send mail. Optional Cloudflare Turnstile is wired behind `NEXT_PUBLIC_TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY`. With either value unset on the server secret, verification stays off and the widget is not rendered, so the form looks the same. When the secret is set, a missing or bad token is rejected with the generic invalid-request response. The token's hostname must match the request host.
 
 14. **`braces` has no fix.** `pnpm audit` still reports one high advisory: `braces` 3.0.3 via `eslint-config-next` → `@next/eslint-plugin-next` → `fast-glob` → `micromatch`. The advisory's patched range is empty (`<0.0.0`). It is a development-tool dependency (stack exhaustion on a deeply nested pattern), not code shipped to site visitors. It was left in place rather than forcing a broken override.
+
+15. **A missing favicon and an image-size warning were left as they were.** `/favicon.ico` returns 404 because `public/` has no favicon. The dev console also warns that the avatar's CSS changes one dimension. Neither is a security defect, and both predate this pass. They were left so the layout stays the same.
 
 ## What still needs action
 

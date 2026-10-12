@@ -27,7 +27,14 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Next 16 writes an AGENTS.md on dev startup unless this is disabled.
+  agentRules: false,
   productionBrowserSourceMaps: false,
+  enablePrerenderSourceMaps: false,
+  experimental: {
+    serverSourceMaps: false,
+    turbopackSourceMaps: false,
+  },
   async headers() {
     return [
       {
