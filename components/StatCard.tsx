@@ -12,15 +12,17 @@ interface StatCardProps {
 export function StatCard({ value, label }: StatCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const [displayValue, setDisplayValue] = useState("0");
-
-  const match = value.match(/^(\d+)(.*)$/);
-  const target = match ? parseInt(match[1], 10) : 0;
-  const suffix = match ? match[2] : "";
+  const [displayValue, setDisplayValue] = useState(value);
 
   useEffect(() => {
     if (!isInView) return;
+    const match = value.match(/^(\d+)(.*)$/);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !match) {
+      return;
+    }
 
+    const target = parseInt(match[1], 10);
+    const suffix = match[2];
     const duration = 1500;
     const start = performance.now();
 
@@ -37,7 +39,7 @@ export function StatCard({ value, label }: StatCardProps) {
     };
 
     requestAnimationFrame(animate);
-  }, [isInView, target, suffix]);
+  }, [isInView, value]);
 
   return (
     <div ref={ref} className="flex-1">

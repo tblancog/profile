@@ -1,0 +1,28 @@
+{
+  "title": "ecommerce",
+  "summary": "Bun monorepo store with Docker Compose. Unpublished until reviewed.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for ecommerce. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 103,
+  "published": false,
+  "sourceFolder": "ecommerce",
+  "sync": {
+    "title": "ecommerce",
+    "summary": "Bun monorepo store with Docker Compose. Unpublished until reviewed.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "claude-code",
+  "summary": "Unpublished stub. Practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for claude-code. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 121,
+  "published": false,
+  "sourceFolder": "claude-code",
+  "sync": {
+    "title": "claude-code",
+    "summary": "Unpublished stub. Practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

@@ -16,6 +16,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Offset for fixed header */
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -60,4 +61,22 @@ a, button {
 /* Ensure consistent input height */
 [data-slot="inner-wrapper"] {
   height: 100%;
+}
+
+.carousel-track {
+  transition: transform 300ms ease;
+}
+
+/* The global button transition animates the card's press scale and fights
+   the project dialog, which reads as a blink when it opens and closes. */
+.portfolio-card,
+.portfolio-card[data-pressed="true"] {
+  transform: none;
+  transition-property: color, background-color, border-color;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    transition: none;
+  }
 }

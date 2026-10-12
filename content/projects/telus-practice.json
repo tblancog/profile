@@ -1,0 +1,28 @@
+{
+  "title": "telus-practice",
+  "summary": "Unpublished stub. Interview or practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for telus-practice. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 113,
+  "published": false,
+  "sourceFolder": "telus-practice",
+  "sync": {
+    "title": "telus-practice",
+    "summary": "Unpublished stub. Interview or practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

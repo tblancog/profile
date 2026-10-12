@@ -1,0 +1,25 @@
+{
+  "title": "NFL Minigames",
+  "summary": "Consumer gaming platform in beta with ~5% of the NFL user base.",
+  "description": "Backend architecture and implementation as the primary backend engineer, later also frontend and DevOps, delivered with agentic tooling.",
+  "role": "Platform Engineer, usTwo",
+  "stack": [
+    "Node.js",
+    "Fastify",
+    "PostgreSQL",
+    "Next.js",
+    "Kubernetes",
+    "AWS"
+  ],
+  "category": "GAMING / PLATFORM",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for NFL Minigames. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 2,
+  "published": true
+}

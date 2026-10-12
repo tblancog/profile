@@ -1,0 +1,28 @@
+{
+  "title": "tanstack",
+  "summary": "Unpublished stub. Practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for tanstack. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 116,
+  "published": false,
+  "sourceFolder": "tanstack",
+  "sync": {
+    "title": "tanstack",
+    "summary": "Unpublished stub. Practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

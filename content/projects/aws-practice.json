@@ -1,0 +1,28 @@
+{
+  "title": "aws-practice",
+  "summary": "Unpublished stub. Practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for aws-practice. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 115,
+  "published": false,
+  "sourceFolder": "aws-practice",
+  "sync": {
+    "title": "aws-practice",
+    "summary": "Unpublished stub. Practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

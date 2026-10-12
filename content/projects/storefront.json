@@ -1,0 +1,28 @@
+{
+  "title": "storefront",
+  "summary": "Next.js storefront with tests. Unpublished until reviewed.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for storefront. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 105,
+  "published": false,
+  "sourceFolder": "storefront",
+  "sync": {
+    "title": "storefront",
+    "summary": "Next.js storefront with tests. Unpublished until reviewed.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

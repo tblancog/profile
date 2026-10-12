@@ -1,0 +1,28 @@
+{
+  "title": "ztm",
+  "summary": "Unpublished stub. Practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for ztm. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 117,
+  "published": false,
+  "sourceFolder": "ztm",
+  "sync": {
+    "title": "ztm",
+    "summary": "Unpublished stub. Practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

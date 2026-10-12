@@ -1,0 +1,23 @@
+{
+  "title": "Holiday Inn Club Vacations",
+  "summary": "Booking platform for package discovery, checkout, and search.",
+  "description": "Features, code reviews, and sustainment for package discovery, filtering, checkout, and search performance (indexing and caching), with stakeholders in Austin.",
+  "role": "Full Stack Engineer, Southern Code",
+  "stack": [
+    "Next.js",
+    "React",
+    "Node.js",
+    "AWS"
+  ],
+  "category": "HOSPITALITY",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for Holiday Inn Club Vacations. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 9,
+  "published": true
+}

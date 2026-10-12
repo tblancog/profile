@@ -1,0 +1,22 @@
+{
+  "title": "Uoppit!",
+  "summary": "Merchant deals app for São Paulo.",
+  "description": "Built from scratch with Expo and React Native, covering deal browsing and merchant profiles, and published on the App Store and Google Play.",
+  "role": "Full Stack Engineer, Bixlabs",
+  "stack": [
+    "React Native",
+    "Expo",
+    "TypeScript"
+  ],
+  "category": "MOBILE / MARKETPLACE",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for Uoppit!. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 4,
+  "published": true
+}

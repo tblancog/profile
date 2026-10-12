@@ -1,0 +1,28 @@
+{
+  "title": "opencode",
+  "summary": "Unpublished stub. Practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for opencode. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 122,
+  "published": false,
+  "sourceFolder": "opencode",
+  "sync": {
+    "title": "opencode",
+    "summary": "Unpublished stub. Practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Skills Matrix SPA / Game of Pods",
+  "summary": "Onboarding SPA and an internal gamification platform.",
+  "description": "Led the Skills Matrix SPA for new-hire onboarding, built from scratch, and contributed to Game of Pods, an internal gamification platform.",
+  "role": "Development Team Lead, Softvision",
+  "stack": [
+    "React",
+    "Node.js",
+    "Angular",
+    "GCP"
+  ],
+  "category": "INTERNAL TOOLS",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for Skills Matrix SPA / Game of Pods. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 10,
+  "published": true
+}

@@ -1,0 +1,22 @@
+{
+  "title": "ProjectHub",
+  "summary": "Internal analytics and project management dashboard.",
+  "description": "An internal analytics and project management tool built with NestJS and Vue, including its CI/CD pipeline.",
+  "role": "Full Stack Engineer, Bixlabs",
+  "stack": [
+    "NestJS",
+    "Vue",
+    "CI/CD"
+  ],
+  "category": "INTERNAL TOOLS",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for ProjectHub. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 8,
+  "published": true
+}

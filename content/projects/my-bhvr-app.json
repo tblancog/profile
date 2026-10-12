@@ -1,0 +1,28 @@
+{
+  "title": "my-bhvr-app",
+  "summary": "Bun, Hono, Vite, and React template. Unpublished until reviewed.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for my-bhvr-app. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 106,
+  "published": false,
+  "sourceFolder": "my-bhvr-app",
+  "sync": {
+    "title": "my-bhvr-app",
+    "summary": "Bun, Hono, Vite, and React template. Unpublished until reviewed.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Recetario",
+  "summary": "Leé tu receta médica. Upload an Argentine e-prescription and get a plain-Spanish explanation and real-time pharmacy prices.",
+  "description": "Patients upload their e-prescriptions as PDFs or images. AI reads them and explains what each medication does in plain Spanish, and the app shows real-time prices across pharmacies.",
+  "role": "Creator / solo full-stack engineer (Apr 2026 – Present)",
+  "stack": [
+    "Next.js",
+    "Tailwind CSS",
+    "AI/LLM",
+    "TypeScript"
+  ],
+  "category": "AI / HEALTHTECH",
+  "links": {
+    "live": "https://recetario-beryl.vercel.app",
+    "repo": "https://github.com/tblancog/recetario"
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for Recetario. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": true,
+  "order": 1,
+  "published": true,
+  "sourceFolder": "prescription2"
+}

@@ -1,0 +1,28 @@
+{
+  "title": "epam",
+  "summary": "Unpublished stub. Interview or practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for epam. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 110,
+  "published": false,
+  "sourceFolder": "epam",
+  "sync": {
+    "title": "epam",
+    "summary": "Unpublished stub. Interview or practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

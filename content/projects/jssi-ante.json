@@ -1,0 +1,23 @@
+{
+  "title": "JSSI/ANTE Aircraft Asset Planner",
+  "summary": "Maintenance scheduling for aircraft engine assets.",
+  "description": "React frontend with a Bryntum scheduler integration for planning aircraft engine inspection and overhaul, over an MS SQL Server backend delivered through Azure DevOps.",
+  "role": "Full Stack Engineer, Bixlabs",
+  "stack": [
+    "React",
+    "Bryntum",
+    "MS SQL Server",
+    "Azure DevOps"
+  ],
+  "category": "AVIATION / MAINTENANCE",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for JSSI/ANTE Aircraft Asset Planner. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 3,
+  "published": true
+}

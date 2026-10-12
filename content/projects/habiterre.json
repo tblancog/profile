@@ -1,0 +1,24 @@
+{
+  "title": "Habiterre",
+  "summary": "AgTech farmer-tracking platform.",
+  "description": "Built from scratch with Mapbox GL interactive maps, data visualization dashboards and unit tests.",
+  "role": "Full Stack Engineer, Code Power",
+  "stack": [
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Mapbox GL",
+    "Prisma"
+  ],
+  "category": "GEOSPATIAL / AGTECH",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for Habiterre. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 5,
+  "published": true
+}

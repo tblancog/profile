@@ -1,0 +1,22 @@
+{
+  "title": "Sharpr",
+  "summary": "Enterprise research platform with AI-powered analysis.",
+  "description": "Integrated AWS Bedrock into content analysis and research workflows, and migrated legacy AngularJS/CakePHP toward React.",
+  "role": "Senior Software Developer, TechGenies",
+  "stack": [
+    "React",
+    "AWS Bedrock",
+    "PostgreSQL"
+  ],
+  "category": "AI / ENTERPRISE SAAS",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for Sharpr. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 7,
+  "published": true
+}
