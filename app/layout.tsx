@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Providers } from "./providers";
+import { site } from "@/content/site";
+import { certifications, education } from "@/content/education";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,40 +16,16 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tonyblanco.dev'), // Update with your actual domain
+  metadataBase: new URL(site.url),
   title: {
-    default: "Tony Blanco - Senior Full Stack Engineer & Tech Lead | React, Node.js & AI",
-    template: "%s | Tony Blanco - Senior Full Stack Engineer",
+    default: site.metaTitle,
+    template: `%s | ${site.name}`,
   },
-  description:
-    "Senior Full Stack Engineer & Tech Lead with 15+ years building production-grade web and mobile apps for US and international clients. React, Next.js, TypeScript, Node.js, AWS, and AI integration. Based in Buenos Aires, Argentina.",
-  keywords: [
-    "Full Stack Engineer",
-    "Senior Full Stack Engineer",
-    "Tech Lead",
-    "React Developer",
-    "Node.js Developer",
-    "TypeScript",
-    "Next.js",
-    "React Native",
-    "AWS",
-    "GCP",
-    "Azure DevOps",
-    "AI Development",
-    "AWS Bedrock",
-    "Remote Developer",
-    "Argentina Developer",
-    "Full Stack Developer",
-    "Web Development",
-    "Enterprise Applications",
-    "Mapbox GL",
-    "PostgreSQL",
-    "GraphQL",
-    "Freelance Developer",
-  ],
-  authors: [{ name: "Tony Blanco", url: "https://tonyblanco.dev" }],
-  creator: "Tony Blanco",
-  publisher: "Tony Blanco",
+  description: site.metaDescription,
+  keywords: [...site.keywords],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
+  publisher: site.name,
   formatDetection: {
     email: false,
     address: false,
@@ -56,27 +34,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://tonyblanco.dev",
-    siteName: "Tony Blanco - Senior Full Stack Engineer & Tech Lead",
-    title: "Tony Blanco - Senior Full Stack Engineer & Tech Lead | React, Node.js & AI",
-    description:
-      "Senior Full Stack Engineer & Tech Lead with 15+ years building production-grade web and mobile apps. React, Next.js, TypeScript, Node.js, AWS, and AI integration.",
+    url: site.url,
+    siteName: site.positioning,
+    title: site.metaTitle,
+    description: site.metaDescription,
     images: [
       {
-        url: "/og-image.jpg", // You'll need to create this image
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Tony Blanco - Full Stack Engineer",
+        alt: `${site.name} – ${site.positioning}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tony Blanco - Senior Full Stack Engineer & Tech Lead | React, Node.js & AI",
-    description:
-      "Senior Full Stack Engineer & Tech Lead with 15+ years building production-grade web and mobile apps. React, Next.js, TypeScript, Node.js, AWS, and AI integration.",
-    images: ["/og-image.jpg"], // Same image as OpenGraph
-    creator: "@tblancog", // Update with your actual Twitter handle if different
+    title: site.metaTitle,
+    description: site.metaDescription,
+    images: ["/og-image.jpg"],
+    creator: "@tblancog",
   },
   robots: {
     index: true,
@@ -88,12 +64,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    // Add these when you verify with search engines
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
   },
 };
 
@@ -107,42 +77,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const degrees = education.filter((entry) => entry.dates);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Tony Blanco",
-    jobTitle: "Senior Full Stack Engineer & Tech Lead",
-    description: "Senior Full Stack Engineer & Tech Lead with 15+ years building production-grade web and mobile applications",
-    url: "https://tonyblanco.dev",
-    sameAs: [
-      "https://linkedin.com/in/tblancog",
-      "https://github.com/tblancog",
-    ],
+    name: site.name,
+    jobTitle: site.positioning,
+    description: site.metaDescription,
+    url: site.url,
+    email: `mailto:${site.email}`,
+    worksFor: {
+      "@type": "Organization",
+      name: site.employer,
+    },
+    sameAs: [site.linkedin, site.github],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Buenos Aires",
       addressCountry: "Argentina",
     },
-    knowsAbout: [
-      "React",
-      "React Native",
-      "Node.js",
-      "TypeScript",
-      "Next.js",
-      "AWS",
-      "GCP",
-      "Azure DevOps",
-      "PostgreSQL",
-      "GraphQL",
-      "Full Stack Development",
-      "Tech Lead",
-      "AI Development",
-      "AWS Bedrock",
-    ],
-    alumniOf: {
+    knowsAbout: [...site.knowsAbout],
+    knowsLanguage: ["Spanish", "English"],
+    alumniOf: degrees.map((entry) => ({
       "@type": "EducationalOrganization",
-      name: "Universidad Bicentenaria de Aragua",
-    },
+      name: entry.school,
+    })),
+    hasCredential: certifications.map((item) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: item.name,
+      recognizedBy: {
+        "@type": "Organization",
+        name: item.issuer,
+      },
+    })),
   };
 
   return (

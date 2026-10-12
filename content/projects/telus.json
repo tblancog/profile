@@ -1,0 +1,28 @@
+{
+  "title": "telus",
+  "summary": "Unpublished stub. Interview or practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for telus. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 111,
+  "published": false,
+  "sourceFolder": "telus",
+  "sync": {
+    "title": "telus",
+    "summary": "Unpublished stub. Interview or practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

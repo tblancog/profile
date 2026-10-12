@@ -61,3 +61,13 @@ a, button {
 [data-slot="inner-wrapper"] {
   height: 100%;
 }
+
+.carousel-track {
+  transition: transform 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    transition: none;
+  }
+}

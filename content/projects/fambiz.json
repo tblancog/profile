@@ -1,0 +1,23 @@
+{
+  "title": "Fambiz",
+  "summary": "Gamified entrepreneurship simulator for educators.",
+  "description": "A Next.js simulation for Build.org. Led its final delivery phase, client demos and release milestones.",
+  "role": "Delivery lead / full-stack engineer, Build.org",
+  "stack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Chakra UI"
+  ],
+  "category": "EDTECH",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for Fambiz. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 6,
+  "published": true
+}

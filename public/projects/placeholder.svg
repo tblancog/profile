@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img">
+  <title>Project image placeholder</title>
+  <rect width="1200" height="675" fill="#0A0F14"/>
+  <rect x="40" y="40" width="1120" height="595" fill="none" stroke="#FFD700" stroke-width="1.5" opacity="0.55"/>
+  <path d="M140 470 C 260 470, 280 210, 420 210 S 560 390, 700 290 S 900 150, 1060 240" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+  <circle cx="420" cy="210" r="6" fill="#FFD700"/>
+  <circle cx="700" cy="290" r="6" fill="#FFD700"/>
+  <circle cx="1060" cy="240" r="6" fill="#FFD700"/>
+  <text x="600" y="120" text-anchor="middle" fill="#FFD700" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" letter-spacing="8">PLACEHOLDER</text>
+</svg>

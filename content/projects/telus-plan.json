@@ -1,0 +1,28 @@
+{
+  "title": "telus-plan",
+  "summary": "Unpublished stub. Interview or practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for telus-plan. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 112,
+  "published": false,
+  "sourceFolder": "telus-plan",
+  "sync": {
+    "title": "telus-plan",
+    "summary": "Unpublished stub. Interview or practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}

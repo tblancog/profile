@@ -1,0 +1,28 @@
+{
+  "title": "wizdaa2",
+  "summary": "Unpublished stub. Interview or practice folder.",
+  "description": "",
+  "role": "",
+  "stack": [],
+  "category": "",
+  "links": {
+    "live": "",
+    "repo": ""
+  },
+  "image": "/projects/placeholder.svg",
+  "imageAlt": "Placeholder image for wizdaa2. Replace with a file in public/projects/.",
+  "imagePlaceholder": true,
+  "featured": false,
+  "order": 107,
+  "published": false,
+  "sourceFolder": "wizdaa2",
+  "sync": {
+    "title": "wizdaa2",
+    "summary": "Unpublished stub. Interview or practice folder.",
+    "description": "",
+    "links": {
+      "live": "",
+      "repo": ""
+    }
+  }
+}
