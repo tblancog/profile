@@ -29,6 +29,7 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const startX = useRef<number | null>(null);
   const activePointer = useRef<number | null>(null);
+  const swiped = useRef(false);
   const statusId = useId();
   const total = projects.length;
 
@@ -55,8 +56,6 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
 
   const onPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
-    const target = event.target as HTMLElement;
-    if (target.closest("a, button")) return;
     startX.current = event.clientX;
     activePointer.current = event.pointerId;
   };
@@ -67,10 +66,15 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
     startX.current = null;
     activePointer.current = null;
     if (Math.abs(delta) < 48) return;
+    swiped.current = true;
     goTo(delta < 0 ? index + 1 : index - 1);
   };
 
   const openProject = (project: Project) => {
+    if (swiped.current) {
+      swiped.current = false;
+      return;
+    }
     setSelected(project);
     setIsModalOpen(true);
   };
