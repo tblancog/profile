@@ -25,7 +25,7 @@ export interface EarlierRole {
 
 export const roles: ExperienceRole[] = [
   {
-    id: "ustwo",
+    id: "usTwo",
     title: "Platform Engineer",
     company: "usTwo",
     dates: "May 2026 – Present",
