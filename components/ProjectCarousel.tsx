@@ -149,11 +149,11 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
                       <Card
                         isPressable
                         onPress={() => openProject(project)}
-                        className="bg-[#1a2332] border-none rounded-xl hover:bg-[#1f2937] transition-colors cursor-pointer group w-full max-w-[420px]"
+                        className="portfolio-card bg-[#1a2332] border-none rounded-xl hover:bg-[#1f2937] transition-colors cursor-pointer group w-full max-w-[420px]"
                         shadow="none"
                       >
                         <CardBody className="flex flex-col gap-4 p-6">
-                          <div className="relative flex items-end w-full h-32 rounded-lg bg-[#0f1621] overflow-hidden group-hover:scale-[1.02] transition-transform">
+                          <div className="relative flex items-end w-full h-32 rounded-lg bg-[#0f1621] overflow-hidden">
                             <Image
                               src={project.image}
                               alt={project.imageAlt}
@@ -258,6 +258,7 @@ export function ProjectCarousel({ projects }: { projects: Project[] }) {
         onClose={closeModal}
         size="2xl"
         scrollBehavior="inside"
+        disableAnimation
         hideCloseButton
         classNames={{
           base: "bg-transparent",

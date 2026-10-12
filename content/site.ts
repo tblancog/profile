@@ -28,7 +28,7 @@ export const site = {
   employer: "usTwo",
   url: "https://tonyblanco.dev",
   bio: [
-    "I'm a senior full-stack engineer with 15+ years of experience building production web and mobile products for US and international teams, working remotely from Buenos Aires. My core stack is React, Next.js, TypeScript and Node.js (Fastify, NestJS, Express) on PostgreSQL, deployed on AWS, GCP and Azure. AI is part of how I work every day: I use Cursor, Claude Code and ChatGPT for implementation, tests and UI from Figma designs, and I've shipped AI features with AWS Bedrock and LLMs. Recetario, my own product, is one example. I own the full delivery cycle: architecture, features, performance, deployment and monitoring.",
+    "Senior full-stack engineer with 15+ years shipping production web and mobile products for US teams, remotely from Buenos Aires. Core stack: React, Next.js, TypeScript, and Node.js. I use AI from design through production and own the full delivery cycle.",
   ],
   industries: [
     "AgTech",
@@ -79,7 +79,7 @@ export const site = {
     "AWS Bedrock",
   ],
   heroDescription:
-    "React, Next.js, TypeScript and Node.js, with agentic development (Cursor, Claude Code) from design to production. 15+ years building production web and mobile products for US and international teams, remotely from Buenos Aires.",
+    "15+ years shipping production web and mobile products with React, Next.js, and Node.js. AI is part of how I ship.",
   skillsIntro: "A toolkit built across 15+ years of production work.",
   contactIntro:
     "I'm open to senior remote contract work and full-time remote roles. Tell me about the product and how I can help ship it.",
