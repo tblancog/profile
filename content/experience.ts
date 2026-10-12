@@ -20,7 +20,19 @@ export interface ExperienceRole {
 
 export interface EarlierRole {
   label: string;
+  title: string;
+  dates: string;
   detail: string;
+}
+
+/** How many entries from the top of `roles` render as full cards. Change this to show more or fewer. */
+export const featuredRoleCount = 5;
+
+export interface Collaboration {
+  id: string;
+  company: string;
+  title: string;
+  dates: string;
 }
 
 export const roles: ExperienceRole[] = [
@@ -203,31 +215,58 @@ export const roles: ExperienceRole[] = [
   },
 ];
 
+export const featuredRoles = roles.slice(0, featuredRoleCount);
+
 export const earlierRoles: EarlierRole[] = [
   {
     label: "Logan",
+    title: "Backend Developer",
+    dates: "2018",
     detail:
       "Backend Developer (2018). Sole developer on a PHP ad server; Redis, AWS EC2.",
   },
   {
     label: "Cablevisión (Fibertel/Flow)",
+    title: "SOAP to REST, Angular and Vue",
+    dates: "2015 – 2017",
     detail:
       "Migrated SOAP services to REST with Angular and Vue frontends (2015 – 2017).",
   },
   {
     label: "Softclear",
+    title: "Project Lead",
+    dates: "2012 – 2015",
     detail:
       "Project Lead on Symfony, CakePHP and WordPress projects in Venezuela (2012 – 2015).",
   },
   {
     label: "PDVSA",
+    title: "PHP development",
+    dates: "2007 – 2009",
     detail: "PHP development for Venezuela's state oil company (2007 – 2009).",
   },
   {
     label: "Telecomsoft",
+    title: "PHP and PostgreSQL",
+    dates: "2006 – 2007",
     detail:
       "PHP and PostgreSQL work, including an aircraft fuel dispatch system (2006 – 2007).",
   },
+];
+
+export const collaborations: Collaboration[] = [
+  ...roles.slice(featuredRoleCount).map((role) => ({
+    id: role.id,
+    company: role.company,
+    title: role.title,
+    dates: role.dates,
+  })),
+  ...earlierRoles.map((role) => ({
+    id: role.label,
+    company: role.label,
+    title: role.title,
+    dates: role.dates,
+  })),
 ];
 
 export const earlierRange = "2006 – 2018";

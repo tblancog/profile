@@ -7,7 +7,7 @@ Next.js site for Tony Blanco, a senior full-stack engineer. Visual layout stays 
 | File | What it controls |
 | --- | --- |
 | `content/site.ts` | Positioning, hero, bio, availability, contact, industries, highlights, time-zone copy, and the meta description |
-| `content/experience.ts` | Roles, bullets, and tags. usTwo is the only role with `current: true` |
+| `content/experience.ts` | Roles, bullets, and tags. `featuredRoleCount` is how many render as full cards (usTwo first). The rest, plus earlier roles, render as collaboration cards. usTwo is the only role with `current: true` |
 | `content/skills.ts` | Skill groups and chips |
 | `content/education.ts` | Degrees, certifications, and spoken languages |
 | `content/projects/*.json` | One file per project for the carousel |

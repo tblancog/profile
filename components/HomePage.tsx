@@ -25,7 +25,7 @@ import { StatCard } from "@/components/StatCard";
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { site } from "@/content/site";
-import { earlierRoles, roles } from "@/content/experience";
+import { collaborations, featuredRoles } from "@/content/experience";
 import { skillGroups } from "@/content/skills";
 import {
   certifications,
@@ -270,7 +270,7 @@ export function HomePage({ projects }: { projects: Project[] }) {
             delay={0.15}
             className="flex flex-col gap-4 lg:gap-6 w-full lg:max-w-[1200px]"
           >
-            {roles.map((role) => (
+            {featuredRoles.map((role) => (
               <Card
                 key={role.id}
                 className="bg-[var(--bg-tertiary)] border-none rounded-xl lg:rounded-2xl"
@@ -316,25 +316,34 @@ export function HomePage({ projects }: { projects: Project[] }) {
             ))}
 
             <Card
-              className="bg-[var(--bg-primary)] border border-[var(--bg-tertiary)] rounded-xl lg:rounded-2xl"
+              className="bg-[var(--bg-tertiary)] border-none rounded-xl lg:rounded-2xl"
               shadow="none"
             >
-              <CardBody className="flex flex-col items-center gap-3 lg:gap-4 p-5 lg:p-8">
-                <span className="text-[var(--text-muted)] font-inter text-xs lg:text-sm font-medium text-center">
-                  Also collaborated with
-                </span>
-                <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-10">
-                  {earlierRoles.map((item, index) => (
-                    <span key={item.label} className="contents">
-                      {index > 0 ? (
-                        <span className="hidden lg:inline text-[var(--bg-tertiary)] font-inter text-lg">
-                          |
-                        </span>
-                      ) : null}
-                      <span className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-semibold">
-                        {item.label}
+              <CardBody className="flex flex-col gap-5 lg:gap-6 p-5 lg:p-8">
+                <div className="flex flex-col gap-2">
+                  <span className="text-[var(--accent-gold)] font-jetbrains text-[10px] lg:text-xs font-semibold tracking-[2px]">
+                    EARLIER WORK
+                  </span>
+                  <h3 className="text-white font-inter text-xl lg:text-2xl font-semibold">
+                    Also collaborated with
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
+                  {collaborations.map((item) => (
+                    <div
+                      key={item.id}
+                      className="flex flex-col gap-2 rounded-xl bg-[var(--bg-primary)] p-4"
+                    >
+                      <p className="text-white font-inter text-base font-semibold">
+                        {item.company}
+                      </p>
+                      <p className="text-[var(--text-secondary)] font-inter text-sm leading-snug">
+                        {item.title}
+                      </p>
+                      <span className="mt-1 w-fit rounded-md bg-[var(--bg-tertiary)] px-3 py-[6px] font-jetbrains text-[11px] lg:text-[13px] font-medium text-[var(--accent-gold)]">
+                        {item.dates}
                       </span>
-                    </span>
+                    </div>
                   ))}
                 </div>
               </CardBody>
