@@ -1,11 +1,9 @@
 /**
  * Work history, newest first.
  *
- * TODO(tony): TechGenies (Aug 2024 – Dec 2025) overlaps Bixlabs
- * (Apr 2025 – Dec 2025). Dates are kept as given. Please review how to
- * present that overlap. LinkedIn wins on titles, company names, and dates.
- * ustwo (May 2026 – Present) is the only current role — do not mark a
- * second role as current.
+ * usTwo (May 2026 – Present) is the only current role.
+ * Bixlabs (Apr 2025 – Dec 2025) and TechGenies (Aug 2024 – Dec 2025)
+ * overlapped because they were concurrent contracts.
  */
 
 export interface ExperienceRole {
@@ -29,7 +27,7 @@ export const roles: ExperienceRole[] = [
   {
     id: "ustwo",
     title: "Platform Engineer",
-    company: "ustwo",
+    company: "usTwo",
     dates: "May 2026 – Present",
     location: "Remote",
     current: true,

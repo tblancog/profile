@@ -4,7 +4,7 @@
 
 ### Must fix
 
-- [x] Add Bixlabs card (Apr 2025 – Dec 2025). ustwo (May 2026 – Present) is the only current role.
+- [x] Add Bixlabs card (Apr 2025 – Dec 2025). usTwo (May 2026 – Present) is the only current role and the first experience card. The Bixlabs / TechGenies overlap is two concurrent contracts.
 - [x] Fix TechGenies end date: "Aug 2024 - Present" → "Aug 2024 - Dec 2025"
 - [x] Update years of experience: "10+" → "15+" everywhere (hero + About stat card)
 

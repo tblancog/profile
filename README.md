@@ -7,12 +7,12 @@ Next.js site for Tony Blanco, a senior full-stack engineer. Visual layout stays 
 | File | What it controls |
 | --- | --- |
 | `content/site.ts` | Positioning, hero, bio, availability, contact, industries, highlights, time-zone copy, and the meta description |
-| `content/experience.ts` | Roles, bullets, and tags. ustwo is the only role with `current: true` |
+| `content/experience.ts` | Roles, bullets, and tags. usTwo is the only role with `current: true` |
 | `content/skills.ts` | Skill groups and chips |
 | `content/education.ts` | Degrees, certifications, and spoken languages |
 | `content/projects/*.json` | One file per project for the carousel |
 
-There is a TODO in `content/experience.ts`: TechGenies (Aug 2024 – Dec 2025) overlaps Bixlabs (Apr 2025 – Dec 2025). The dates are kept as given. Review that overlap before treating the two roles as simultaneous. ustwo (May 2026 – Present) is the only current role. LinkedIn wins on titles, company names, and dates.
+usTwo (May 2026 – Present) is the only current role, and it is the first experience card. Bixlabs (Apr 2025 – Dec 2025) and TechGenies (Aug 2024 – Dec 2025) overlapped because they were concurrent contracts. LinkedIn wins on titles, company names, and dates.
 
 `pnpm dev` picks up content edits. A production build bakes published projects in at build time.
 

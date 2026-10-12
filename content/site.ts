@@ -19,13 +19,13 @@ export const site = {
   availabilityBadge: "Open to senior remote contract and full-time roles",
   availability:
     "Open to senior remote contract work and full-time remote roles.",
-  currentRole: "Current role: Platform Engineer at ustwo (NFL Minigames).",
+  currentRole: "Current role: Platform Engineer at usTwo (NFL Minigames).",
   email: "tblancog@gmail.com",
   linkedin: "https://www.linkedin.com/in/tblancog/",
   github: "https://github.com/tblancog",
   calendly: "https://calendly.com/tblancog/1-hour-meeting",
   avatar: "/assets/avatar.jpg",
-  employer: "ustwo",
+  employer: "usTwo",
   url: "https://tonyblanco.dev",
   bio: [
     "I'm a senior full-stack engineer with 15+ years of experience building production web and mobile products for US and international teams, working remotely from Buenos Aires. My core stack is React, Next.js, TypeScript and Node.js (Fastify, NestJS, Express) on PostgreSQL, deployed on AWS, GCP and Azure. AI is part of how I work every day: I use Cursor, Claude Code and ChatGPT for implementation, tests and UI from Figma designs, and I've shipped AI features with AWS Bedrock and LLMs. Recetario, my own product, is one example. I own the full delivery cycle: architecture, features, performance, deployment and monitoring.",
