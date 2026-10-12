@@ -18,7 +18,12 @@ import type { Project } from "@/content/project";
 const chipColor = "bg-[var(--bg-primary)]";
 
 function isHttpUrl(value: string) {
-  return /^https?:\/\//i.test(value);
+  try {
+    const url = new URL(value);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
 export function ProjectCarousel({ projects }: { projects: Project[] }) {

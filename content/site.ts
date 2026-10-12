@@ -20,7 +20,6 @@ export const site = {
   availability:
     "Open to senior remote contract work and full-time remote roles.",
   currentRole: "Current role: Platform Engineer at usTwo (NFL Minigames).",
-  email: "tblancog@gmail.com",
   linkedin: "https://www.linkedin.com/in/tblancog/",
   github: "https://github.com/tblancog",
   calendly: "https://calendly.com/tblancog/1-hour-meeting",

@@ -4,23 +4,23 @@ import { useState } from "react";
 import { Button } from "@heroui/react";
 import { Send, CheckCircle, XCircle } from "lucide-react";
 import { z } from "zod";
-import { site } from "@/content/site";
+import { CONTACT_LIMITS } from "@/lib/contact-limits";
 
 const contactSchema = z.object({
-  firstName: z.string().min(1, "First name is required").max(50),
-  lastName: z.string().min(1, "Last name is required").max(50),
-  email: z.string().email("Please enter a valid email"),
-  subject: z.string().min(1, "Subject is required").max(100),
+  firstName: z.string().min(1, "First name is required").max(CONTACT_LIMITS.name),
+  lastName: z.string().min(1, "Last name is required").max(CONTACT_LIMITS.name),
+  email: z.string().email("Please enter a valid email").max(CONTACT_LIMITS.email),
+  subject: z.string().min(1, "Subject is required").max(CONTACT_LIMITS.subject),
   message: z
     .string()
     .min(10, "Message must be at least 10 characters")
-    .max(2048, "Message cannot exceed 2048 characters"),
+    .max(CONTACT_LIMITS.message, "Message cannot exceed 2048 characters"),
   website: z.string().optional(),
 });
 
 type SubmitStatus = "idle" | "success" | "error";
 
-export function ContactForm() {
+export function ContactForm({ turnstileSiteKey }: { turnstileSiteKey?: string }) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -48,7 +48,7 @@ export function ContactForm() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const result = contactSchema.safeParse(formData);
@@ -67,10 +67,16 @@ export function ContactForm() {
     setErrors({});
 
     try {
+      const turnstileToken = e.currentTarget
+        .querySelector<HTMLInputElement | HTMLTextAreaElement>('[name="cf-turnstile-response"]')
+        ?.value;
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          ...(turnstileToken ? { turnstileToken } : {}),
+        }),
       });
 
       if (!response.ok) {
@@ -117,7 +123,7 @@ export function ContactForm() {
         <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/30 text-red-400 px-4 py-3 rounded-xl mb-6">
           <XCircle className="w-5 h-5 flex-shrink-0" />
           <span className="font-inter text-sm">
-            Failed to send message. Please try again or email {site.email}.
+            Failed to send message. Please try again.
           </span>
         </div>
       )}
@@ -136,6 +142,8 @@ export function ContactForm() {
                 value={formData.firstName}
                 onChange={(e) => handleChange("firstName", e.target.value)}
                 placeholder="John"
+                maxLength={CONTACT_LIMITS.name}
+                autoComplete="given-name"
                 className={inputStyles(!!errors.firstName)}
               />
               {errors.firstName && (
@@ -152,6 +160,8 @@ export function ContactForm() {
                 value={formData.lastName}
                 onChange={(e) => handleChange("lastName", e.target.value)}
                 placeholder="Doe"
+                maxLength={CONTACT_LIMITS.name}
+                autoComplete="family-name"
                 className={inputStyles(!!errors.lastName)}
               />
               {errors.lastName && (
@@ -171,6 +181,8 @@ export function ContactForm() {
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
               placeholder="john@example.com"
+              maxLength={CONTACT_LIMITS.email}
+              autoComplete="email"
               className={inputStyles(!!errors.email)}
             />
             {errors.email && (
@@ -189,6 +201,7 @@ export function ContactForm() {
               value={formData.subject}
               onChange={(e) => handleChange("subject", e.target.value)}
               placeholder="Project inquiry"
+              maxLength={CONTACT_LIMITS.subject}
               className={inputStyles(!!errors.subject)}
             />
             {errors.subject && (
@@ -226,6 +239,7 @@ export function ContactForm() {
 
           {/* Honeypot - hidden from users */}
           <div className="absolute opacity-0 pointer-events-none h-0 overflow-hidden" aria-hidden="true">
+            <label htmlFor="website">Company website</label>
             <input
               id="website"
               name="website"
@@ -236,6 +250,10 @@ export function ContactForm() {
               onChange={(e) => handleChange("website", e.target.value)}
             />
           </div>
+
+          {turnstileSiteKey ? (
+            <div className="cf-turnstile" data-sitekey={turnstileSiteKey} />
+          ) : null}
 
           {/* Submit Button */}
           <Button

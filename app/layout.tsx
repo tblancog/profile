@@ -1,8 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { connection } from "next/server";
+import { headers } from "next/headers";
+import Script from "next/script";
 import { Providers } from "./providers";
 import { site } from "@/content/site";
 import { certifications, education } from "@/content/education";
+import { serializeJsonLd } from "@/lib/html-escape";
 import "./globals.css";
 
 const inter = Inter({
@@ -72,11 +76,14 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await connection();
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim();
   const degrees = education.filter((entry) => entry.dates);
   const jsonLd = {
     "@context": "https://schema.org",
@@ -85,7 +92,6 @@ export default function RootLayout({
     jobTitle: site.positioning,
     description: site.metaDescription,
     url: site.url,
-    email: `mailto:${site.email}`,
     worksFor: {
       "@type": "Organization",
       name: site.employer,
@@ -117,10 +123,18 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          nonce={nonce}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
         />
       </head>
       <body className="min-h-screen font-inter antialiased bg-[var(--bg-primary)]">
+        {turnstileSiteKey ? (
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            strategy="afterInteractive"
+            nonce={nonce}
+          />
+        ) : null}
         <Providers>{children}</Providers>
       </body>
     </html>

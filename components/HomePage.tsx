@@ -39,7 +39,13 @@ const chipColor =
 
 const timezoneIcons = [Clock4, MessageCircle, Zap];
 
-export function HomePage({ projects }: { projects: Project[] }) {
+export function HomePage({
+  projects,
+  turnstileSiteKey,
+}: {
+  projects: Project[];
+  turnstileSiteKey?: string;
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
@@ -518,14 +524,7 @@ export function HomePage({ projects }: { projects: Project[] }) {
                   Ready to Start Your Next Project?
                 </h2>
                 <p className="text-[var(--text-secondary)] font-inter text-sm lg:text-lg font-normal leading-[1.6] text-center w-full md:max-w-[500px] lg:max-w-[600px]">
-                  {site.contactIntro} Email{" "}
-                  <a
-                    href={`mailto:${site.email}`}
-                    className="text-[var(--accent-gold)] hover:underline"
-                  >
-                    {site.email}
-                  </a>
-                  .
+                  {site.contactIntro}
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-3 lg:gap-4 w-full md:justify-center">
@@ -541,7 +540,9 @@ export function HomePage({ projects }: { projects: Project[] }) {
                     variant="bordered"
                     className="w-full md:w-auto h-auto py-4 lg:py-[18px] px-6 lg:px-10 border-2 border-[var(--accent-gold)] text-[var(--accent-gold)] font-inter text-sm lg:text-base font-semibold rounded-lg bg-transparent flex flex-row items-center justify-center gap-[10px]"
                     radius="sm"
-                    onPress={() => window.open(site.calendly, "_blank")}
+                    onPress={() =>
+                      window.open(site.calendly, "_blank", "noopener,noreferrer")
+                    }
                   >
                     <Calendar className="w-[18px] h-[18px] lg:w-5 lg:h-5 text-[var(--accent-gold)]" />
                     Schedule a Call
@@ -565,7 +566,7 @@ export function HomePage({ projects }: { projects: Project[] }) {
                   24 hours.
                 </p>
               </div>
-              <ContactForm />
+              <ContactForm turnstileSiteKey={turnstileSiteKey} />
             </div>
           </Reveal>
         </section>
